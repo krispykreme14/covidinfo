@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+  <title>{{name}}| Home </title>
+{% endblock %}
+{% block pagecontent %}
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to COVID Information Supersite!</h1>
+    <p class="lead"> Demo of API access and display.</p>
+    <hr class="my-4">
+    <p>Enjoy!</p>
+  </div>
+
+<hr>
+<h2>Current Snapshot of the data</h2>
+<table class="table table-striped table-bordered table-sm">
+  <thead class="thead-dark">
+  <tr>
+    <th>State</th>
+    <th>Positive Cases</th>
+    <th>Total Deaths</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for item in data %}
+  <TR>
+    <TD class="c2">{{item.state}}</TD>
+    <TD class="c2">{{item.positive}}</TD>
+    <TD class="c3">{{item.death}}</TD>
+  </TR>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

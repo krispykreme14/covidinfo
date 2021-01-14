@@ -1,0 +1,52 @@
+
+<!doctype html>
+
+<html>
+
+  <head>
+   <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Ketki's Corner</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"/>
+      <style>
+          a.nav-link {
+           color: brown;
+          }
+      </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  
+    <title>{% block title %}{% endblock %} </title>
+    </head>
+
+    <body style="background-color:#78ace7">
+      <!-- Navigation Bar from bootstrap -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">{{name}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+        </div>
+      </div>
+    </nav>
+      <div class="container-fluid">
+        <div class="row justify-content-end" style="padding-top: 2%; padding-bottom: 2%; padding: 2%;">
+            <div class="col-2" style="text-align: right;">
+                <!--social media icons-->
+                {% block info %}
+                <!-- jinja -->
+                <h5>{{name}}</h5>
+                <a href={{github}} target="_blank"><i class="fa fa-github"></i></a>
+                <a href={{youtube}} target="_blank"><i class="fa fa-youtube-play"></i></a>
+                <a href={{twitter}} target="_blank"><i class="fa fa-twitter"></i></a>  
+                {% endblock %}
+            </div>  
+          </div>
+          {% block pagecontent %}
+          {% endblock %}
+      </div>
+    </body>
+</html>
